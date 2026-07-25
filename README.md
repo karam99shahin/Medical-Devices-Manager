@@ -13,6 +13,19 @@ A desktop GUI application built with Python and Tkinter for managing medical dev
 - **Load from CSV** — import devices from a `.csv` file (replaces current data)
 - **Input validation** — duplicate IDs and invalid date formats are rejected with clear error messages
 
+## Screenshots
+### Main Window
+![Main Window](screenshots/main_window.png)
+
+### Adding a Device
+![Add Device](screenshots/add_device.png)
+
+### Search by ID
+![Search by ID](screenshots/search_by_id.png)
+
+### Search by Name
+![Search by Name](screenshots/search_by_name.png)
+
 ## Project Structure
 
 ```
