@@ -21,10 +21,10 @@ A desktop GUI application built with Python and Tkinter for managing medical dev
 ![Add Device](screenshots/add_device.png)
 
 ### Search by ID
-![Search by ID](screenshots/search_by_id.png)
+![Search by ID](screenshots/search_by_id_results.png)
 
 ### Search by Name
-![Search by Name](screenshots/search_by_name.png)
+![Search by Name](screenshots/search_by_name_results.png)
 
 ## Project Structure
 
