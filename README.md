@@ -35,13 +35,13 @@ Tkinter itself ships with most standard Python installations and does not need t
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/karam99shaheen/Medical-Devices-Manager.git
+   git clone https://github.com/karam99shahin/Medical-Devices-Manager.git
    cd Medical-Devices-Manager
    ```
 
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install tkcalendar
    ```
 
 3. Run the application:
