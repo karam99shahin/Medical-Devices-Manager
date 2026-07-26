@@ -122,20 +122,30 @@ def save_to_csv(filename):
 
 
 def load_from_csv(filename):
-    """Load devices from a CSV file."""
+    """Load devices from a CSV file. Returns (success: bool, message: str)."""
 
-    devices.clear()
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            next(reader)  # Skip header
 
-    with open(filename, "r", encoding="utf-8") as file:
-        reader = csv.reader(file)
-        next(reader)  # Skip header
+            loaded_devices = []
+            for row in reader:
+                if len(row) < 5:
+                    continue
 
-        for row in reader:
-            device = {
-                "name": row[0],
-                "id": row[1],
-                "type": row[2],
-                "status": row[3],
-                "maintenance_date": row[4]
-            }
-            devices.append(device)
+                device = {
+                    "name": row[0],
+                    "id": row[1],
+                    "type": row[2],
+                    "status": row[3],
+                    "maintenance_date": row[4]
+                }
+                loaded_devices.append(device)
+
+        devices.clear()
+        devices.extend(loaded_devices)
+        return True, "Devices loaded successfully"
+
+    except Exception:
+        return False, "Failed to load file. Make sure it's a valid CSV export from this app."

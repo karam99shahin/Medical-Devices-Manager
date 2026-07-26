@@ -219,9 +219,14 @@ def load_devices_gui():
     )
 
     if filename:
-        load_from_csv(filename)
+        success, message = load_from_csv(filename)
+
+        if not success:
+            messagebox.showerror("Error", message)
+            return
+
         refresh_table()
-        messagebox.showinfo("Success", "Devices loaded successfully!")            
+        messagebox.showinfo("Success", message)           
 
 def add_device_from_gui(name, device_id, device_type, date, window_to_close):
     from tkinter import messagebox
