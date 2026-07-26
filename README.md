@@ -71,5 +71,25 @@ Tkinter itself ships with most standard Python installations and does not need t
 
 ## Known Limitations / Future Improvements
 
-- No validation is performed when loading a CSV file — a malformed file (missing columns, corrupted rows) may cause the program to crash. Wrapping `load_from_csv` in error handling is a planned improvement.
 - Data is not persisted automatically; there is no database backend (by design)
+- CSV reading/writing relies on fixed column order rather than named columns; using csv.DictReader/DictWriter would make this more robust.
+
+## Troubleshooting
+
+**`ModuleNotFoundError: No module named 'tkcalendar'`**
+The `tkcalendar` package is not installed. Run:
+```bash
+pip install tkcalendar
+```
+
+**`'pip' is not recognized as an internal or external command`**
+Python (and pip) is not installed, or not added to your system PATH. Reinstall Python from [python.org](https://python.org) and make sure to check "Add python.exe to PATH" during installation. Alternatively, try `python -m pip install tkcalendar` instead of `pip install tkcalendar`.
+
+**The application window doesn't fit on my screen**
+The window size is fixed at startup. If needed, adjust the `window.geometry(...)` value near the top of `gui.py`.
+
+**"Load from CSV" fails with an error**
+Make sure the CSV file follows the expected format (columns: `name, id, type, status, maintenance_date`) and was exported using this app's "Save to CSV" feature, or matches that structure exactly.
+
+**Data disappeared after closing the app**
+This is expected behavior — data is stored in memory only during runtime. Use "Save to CSV" before closing to keep your data, and "Load from CSV" to restore it later.
