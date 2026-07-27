@@ -229,7 +229,7 @@ def load_devices_gui():
         messagebox.showinfo("Success", message)           
 
 def add_device_from_gui(name, device_id, device_type, date, window_to_close):
-    from tkinter import messagebox
+    
 
     if not name.strip() or not device_id.strip() or not device_type.strip() or not date.strip():
         messagebox.showerror("Error", "All fields are required!")
@@ -246,7 +246,7 @@ def add_device_from_gui(name, device_id, device_type, date, window_to_close):
     messagebox.showinfo("Success", message)
 
 def update_status_from_gui(device_id, new_status, window_to_close):
-    from tkinter import messagebox
+    
 
     success, message = update_status(device_id, new_status)
 
@@ -259,8 +259,7 @@ def update_status_from_gui(device_id, new_status, window_to_close):
     messagebox.showinfo("Success", message) 
 
 def delete_device_from_gui(device_id, window_to_close):
-    from tkinter import messagebox
-
+    
     success, message = delete_device(device_id)
 
     if not success:
@@ -272,7 +271,7 @@ def delete_device_from_gui(device_id, window_to_close):
     messagebox.showinfo("Success",message )
 
 def search_device_from_gui(device_id, window_to_close):
-    from tkinter import messagebox
+    
 
     device = find_device(device_id)
 
@@ -291,7 +290,7 @@ def search_device_from_gui(device_id, window_to_close):
     window_to_close.destroy()   
 
 def search_by_name_from_gui(name_query, window_to_close):
-    from tkinter import messagebox
+   
 
     if not name_query.strip():
         messagebox.showerror("Error", "Please enter a name to search!")
